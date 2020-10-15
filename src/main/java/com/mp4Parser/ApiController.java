@@ -20,16 +20,16 @@ public class ApiController {
     @ResponseStatus(value = HttpStatus.OK)
     public String getApiTest2(@RequestParam(value = "filePath") String filePath) throws IOException {
         FileSystemResource file = new FileSystemResource(filePath);
-//        if(file != null) {
-//            return "{\"file name\":\"" + file.getFilename() + "\", \"length\":\"" + file.contentLength() +"\"}";
-//        }
-        try {
-            FileInputStream testStream = new FileInputStream(file.getFile());
-            return "{\"result\":\"" + testStream.available() + "\"}";
-        } catch(Exception e) {
-            e.printStackTrace();
-            return "{\"result\": \"Error\", \"path\": \"" + filePath + "\"}";
+        if(file != null) {
+            return "{\"file name\":\"" + file.getFilename() + "\", \"length\":\"" + file.contentLength() +"\"}";
         }
-//        return "{\"result\": \"Error\", \"path\": \"" + filePath + "\"}";
+//        try {
+//            FileInputStream testStream = new FileInputStream(file.getFile());
+//            return "{\"result\":\"" + testStream.available() + "\"}";
+//        } catch(Exception e) {
+//            e.printStackTrace();
+//            return "{\"result\": \"Error\", \"path\": \"" + filePath + "\"}";
+//        }
+        return "{\"result\": \"Error\", \"path\": \"" + filePath + "\"}";
     }
 }
