@@ -19,10 +19,10 @@ public class ApiController {
     @RequestMapping(value = "/api/mp4Parser", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public String getApiTest2(@RequestParam(value = "filePath") String filePath) throws IOException {
-        FileSystemResource file = new FileSystemResource(filePath);
-        if(file != null) {
-            return "{\"file name\":\"" + file.getFilename() + "\", \"length\":\"" + file.contentLength() +"\"}";
-        }
+//        FileSystemResource file = new FileSystemResource(filePath);
+//        if(file != null) {
+//            return "{\"file name\":\"" + file.getFilename() + "\", \"length\":\"" + file.contentLength() +"\"}";
+//        }
 //        try {
 //            FileInputStream testStream = new FileInputStream(file.getFile());
 //            return "{\"result\":\"" + testStream.available() + "\"}";
