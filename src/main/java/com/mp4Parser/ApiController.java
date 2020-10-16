@@ -43,6 +43,6 @@ public class ApiController {
 
         String type = file.getContentType();
 
-        return type;
+        return "{\"type\" : \"" + type + "\"}";
     }
 }
