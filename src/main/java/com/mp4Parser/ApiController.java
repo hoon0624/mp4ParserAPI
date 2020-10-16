@@ -18,6 +18,13 @@ public class ApiController {
         // return "test";
     }
 
+    @RequestMapping(value = "/api/welcome", method = RequestMethod.GET)
+    @ResponseStatus(value = HttpStatus.OK)
+    public String getApiTest3() {
+        // return "{\"result\": \"ok\" }";
+        return "welcome";
+    }
+
     @RequestMapping(value = "/api/mp4Parser", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public String getApiTest2(@RequestParam(value = "filePath") String filePath) throws IOException {
