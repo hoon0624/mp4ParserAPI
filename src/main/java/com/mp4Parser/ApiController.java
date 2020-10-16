@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-@RestController
+@Controller
 public class ApiController {
 
     @RequestMapping(value = "/api/test", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public String getApiTest() {
-        // return "{\"result\": \"ok\" }";
-        return "test";
+        return "{\"result\": \"ok\" }";
+        // return "test";
     }
 
     @RequestMapping(value = "/api/mp4Parser", method = RequestMethod.GET)
