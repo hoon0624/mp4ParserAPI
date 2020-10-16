@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-@Controller
+@RestController
 public class ApiController {
 
     @RequestMapping(value = "/api/test", method = RequestMethod.GET)
