@@ -3,6 +3,7 @@ package com.mp4Parser;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -30,6 +31,17 @@ public class ApiController {
 //            e.printStackTrace();
 //            return "{\"result\": \"Error\", \"path\": \"" + filePath + "\"}";
 //        }
+
         return "{\"result\": \"Error\", \"path\": \"" + filePath + "\"}";
+    }
+
+    @RequestMapping(value = "/api/upload", method = RequestMethod.POST)
+    @ResponseStatus(value = HttpStatus.OK)
+    public String upload(@RequestBody MultipartFile file) {
+//        storageService.store(file);
+
+        String type = file.getContentType();
+
+        return type;
     }
 }
