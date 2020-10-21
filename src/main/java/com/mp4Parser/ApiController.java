@@ -55,8 +55,8 @@ public class ApiController {
             int x = s.available();
             byte[] b = new byte[4];
             s.read(b);
-//            s.close();
             Box n = new Box(s, 32, "ftyp");
+            s.close();
 
             return "first 4 bytes : " + Arrays.toString(b) + "\nBox Type: " + n.getType();
         } catch(Exception e) {
